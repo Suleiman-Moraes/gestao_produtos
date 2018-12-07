@@ -28,6 +28,7 @@
                                 <td><a href="{% url 'produto_update' produto.id %}" title="Editar {{ produto.nome }}?">R$ {{ produto.preco }}</a></td>
                                 <td>
                                     <a href="{% url 'produto_delete' produto.id %}" class="trash-item" title="Delatar {{ produto.nome }}?">
+                                        Deletar
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </td>
