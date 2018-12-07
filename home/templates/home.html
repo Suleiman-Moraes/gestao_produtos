@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title%} Seja Bem vindo{% endblock%}
+
+{% block main %}
+
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col-8">
+            <h1>Seja Bem Vindo!</h1>
+            <br>
+            <h2>Ao Sistema Django do Suleiman Moraes</h2>
+            <br>
+        </div>
+        <div class="col-sm">
+            {% if not user.is_authenticated %}
+                <a href="{% url 'login' %}" class="alert-link">Login</a>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted"><p>a</p></span>
+            <span class="text-muted"><p>Login: susu</p></span>
+            <span class="text-muted"><p>Senha: 12345678</p></span>
+            <span class="text-muted"><p>Feito por Suleiman Moraes</p></span>
+            <span class="text-muted"><p>email: suleimanmoraes@gmail.com</p></span>
+            <span class="text-muted"><p>GitHub: <a href="https://github.com/Suleiman-Moraes/gestao_clientes">https://github.com/Suleiman-Moraes</a></p></span>
+            <span class="text-muted"><p>URL do repositorio git: <a href="https://github.com/Suleiman-Moraes/gestao_clientes">https://github.com/Suleiman-Moraes/gestao_produtos.git</a></p></span>
+            <span class="text-muted"><p>URL do ambiente python: <a href="https://github.com/Suleiman-Moraes/gestao_clientes">https://github.com/Suleiman-Moraes/AmbientePython</a></p></span>
+        </div>
+    </footer>
+{% endblock %}

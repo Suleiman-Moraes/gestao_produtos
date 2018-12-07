@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title%} Confirmacao {% endblock%}
+
+{% block main %}
+
+    <h1>Tem certeza que deseja deletar {{ produto.nome }}?</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <p>
+            <button type="submit" class="btn btn-danger">Sim</button>
+            <a class="btn btn-warning" href="{% url 'produto_list' %}">Não <span class="sr-only">(current)</span></a>
+        </p>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title%} Administracao {% endblock%}
+
+{% block main %}
+
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col-6">
+            <h3>Listagem de Produtos</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th width="50%" scope="col">Nome</th>
+                            <th width="15%" scope="col">Marca</th>
+                            <th width="15%" scope="col">Valor</th>
+                            <th width="10%" scope="col">Deletar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        {% for produto in lista_produto %}
+                            <tr>
+                                <td><a href="{% url 'produto_update' produto.id %}" title="Editar {{ produto.nome }}?">{{ produto.nome }}</a></td>
+                                <td><a href="{% url 'produto_update' produto.id %}" title="Editar {{ produto.nome }}?">{{ produto.marca }}</a></td>
+                                <td><a href="{% url 'produto_update' produto.id %}" title="Editar {{ produto.nome }}?">R$ {{ produto.preco }}</a></td>
+                                <td>
+                                    <a href="{% url 'produto_delete' produto.id %}" class="trash-item" title="Delatar {{ produto.nome }}?">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tr>
+                    </tbody>
+                </table>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+
+{% endblock %}
